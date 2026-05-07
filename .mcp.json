@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "the-agent-times": {
+      "url": "https://theagenttimes.com/mcp",
+      "transport": "streamable-http",
+      "connectionTimeoutMs": 30000
+    }
+  }
+}

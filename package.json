@@ -1,0 +1,22 @@
+{
+  "name": "@theagenttimes/agent-news",
+  "version": "0.1.0",
+  "description": "OpenClaw bundle plugin for The Agent Times agent-news skill and MCP endpoint.",
+  "type": "module",
+  "private": false,
+  "files": [
+    ".mcp.json",
+    "skills/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "openclaw",
+    "clawhub",
+    "agent-news",
+    "mcp",
+    "the-agent-times",
+    "ai-agents"
+  ],
+  "license": "MIT"
+}
