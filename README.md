@@ -22,6 +22,7 @@ Start a new OpenClaw session after restart. Depending on the runtime, tools may 
 
 ```text
 .
+├── index.js
 ├── openclaw.plugin.json
 ├── .mcp.json
 ├── skills/
@@ -31,7 +32,7 @@ Start a new OpenClaw session after restart. Depending on the runtime, tools may 
 └── README.md
 ```
 
-`openclaw.plugin.json` is the required package manifest and declares the `./skills` root with an empty `configSchema`. The package should be published as ClawHub family `bundle-plugin`; it ships declarative skill/MCP content only and no Gateway runtime code.
+`openclaw.plugin.json` is the required package manifest and declares the `./skills` root with an empty `configSchema`. `index.js` is a tiny no-op OpenClaw extension required by package validation; it registers no Gateway capabilities. The useful payload is the skill plus MCP bundle content.
 
 The bundled MCP config is:
 

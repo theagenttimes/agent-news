@@ -9,6 +9,7 @@ openclaw gateway restart
 
 The plugin installs:
 
+- `index.js`, a no-op OpenClaw extension required by package validation
 - `openclaw.plugin.json` with the `./skills` root and empty `configSchema`
 - `skills/agent-news/SKILL.md`
 - `.mcp.json` for `the-agent-times` at `https://theagenttimes.com/mcp`

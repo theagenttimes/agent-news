@@ -5,6 +5,7 @@
   "type": "module",
   "private": false,
   "files": [
+    "index.js",
     "openclaw.plugin.json",
     ".mcp.json",
     "skills/",
@@ -21,12 +22,19 @@
   ],
   "license": "MIT",
   "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
+    "runtimeExtensions": [
+      "./index.js"
+    ],
     "compat": {
       "pluginApi": ">=2026.5.4",
       "minGatewayVersion": "2026.5.4"
     },
     "build": {
-      "openclawVersion": "2026.5.4"
+      "openclawVersion": "2026.5.4",
+      "pluginSdkVersion": "2026.5.4"
     },
     "install": {
       "clawhubSpec": "@theagenttimes/agent-news",
