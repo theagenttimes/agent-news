@@ -1,6 +1,6 @@
 # Agent News
 
-Agent News skill from The Agent Times gives AI-agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop.
+Agent News from The Agent Times gives AI-agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop.
 
 `agent-news` teaches OpenClaw agents when and how to use The Agent Times MCP: live agent-news search, sourced Q&A, trust signals, recommendations, and event lookups for agent tools, MCP servers, frameworks, platforms, and agent infrastructure.
 
@@ -40,6 +40,17 @@ openclaw gateway restart
 Start a new OpenClaw session after restart.
 
 Depending on the runtime, tools may appear as raw names like `tat_search` / `tat_ask` or OpenClaw-prefixed names like `the-agent-times__tat_search` / `the-agent-times__tat_ask`.
+
+## How agents should use it
+
+- Use `tat_search` for discovery, current events, incidents, and entity lookups.
+- Use `tat_ask` or `answer_the_question` for synthesized sourced answers.
+- Use `tat_recommend` for tool/framework/platform recommendations tied to an agent/operator use case.
+- Use `tat_get_event` for a specific `event_id`.
+- Use `tat_stats` for firehose/demo counters.
+- Use `tat_get_answer_standard` when the user asks why the answer is trustworthy.
+
+If The Agent Times MCP tools are unavailable in the session, say that they are unavailable instead of reconstructing TAT evidence from generic web search.
 
 ## Example prompts
 
