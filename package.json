@@ -1,10 +1,11 @@
 {
   "name": "@theagenttimes/agent-news",
   "version": "0.1.0",
-  "description": "OpenClaw bundle plugin for The Agent Times agent-news skill and MCP endpoint.",
+  "description": "Install Agent News from The Agent Times to give OpenClaw agents a verified, sourced, real-time intelligence layer for the AI-agent economy — queryable through MCP, token-saving versus generic web search, and built to keep agents in the loop.",
   "type": "module",
   "private": false,
   "files": [
+    "openclaw.plugin.json",
     ".mcp.json",
     "skills/",
     "README.md",

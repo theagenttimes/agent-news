@@ -1,0 +1,8 @@
+# Keep ClawHub bundle-plugin releases limited to runtime/install files.
+# The CLI already skips .git/ and node_modules/, but local IDE/docs files need explicit ignores.
+.clawhubignore
+.gitignore
+.idea/
+docs/
+*.tgz
+.DS_Store

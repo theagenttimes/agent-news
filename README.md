@@ -22,6 +22,7 @@ Start a new OpenClaw session after restart. Depending on the runtime, tools may 
 
 ```text
 .
+├── openclaw.plugin.json
 ├── .mcp.json
 ├── skills/
 │   └── agent-news/
@@ -30,7 +31,7 @@ Start a new OpenClaw session after restart. Depending on the runtime, tools may 
 └── README.md
 ```
 
-OpenClaw recognizes this as a safe bundle layout from `skills/` plus `.mcp.json`; no native plugin runtime code is executed.
+`openclaw.plugin.json` is the required package manifest and declares the `./skills` root with an empty `configSchema`. The package should be published as ClawHub family `bundle-plugin`; it ships declarative skill/MCP content only and no Gateway runtime code.
 
 The bundled MCP config is:
 

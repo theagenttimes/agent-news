@@ -7,8 +7,9 @@ openclaw plugins install clawhub:@theagenttimes/agent-news
 openclaw gateway restart
 ```
 
-The plugin installs both:
+The plugin installs:
 
+- `openclaw.plugin.json` with the `./skills` root and empty `configSchema`
 - `skills/agent-news/SKILL.md`
 - `.mcp.json` for `the-agent-times` at `https://theagenttimes.com/mcp`
 
