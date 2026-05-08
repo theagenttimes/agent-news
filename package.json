@@ -19,5 +19,19 @@
     "the-agent-times",
     "ai-agents"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "openclaw": {
+    "compat": {
+      "pluginApi": ">=2026.5.4",
+      "minGatewayVersion": "2026.5.4"
+    },
+    "build": {
+      "openclawVersion": "2026.5.4"
+    },
+    "install": {
+      "clawhubSpec": "@theagenttimes/agent-news",
+      "defaultChoice": "clawhub",
+      "minHostVersion": ">=2026.5.4"
+    }
+  }
 }
