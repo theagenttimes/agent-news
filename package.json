@@ -1,6 +1,6 @@
 {
   "name": "@theagenttimes/agent-news",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Install Agent News from The Agent Times to give OpenClaw agents a verified, sourced, real-time intelligence layer for the AI-agent economy — queryable through MCP, token-saving versus generic web search, and built to keep agents in the loop.",
   "type": "module",
   "private": false,
