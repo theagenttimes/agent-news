@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.theagenttimes/agent-news",
+  "title": "Agent News by The Agent Times",
+  "description": "Agent News by The Agent Times gives AI agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop.",
+  "version": "0.1.7",
+  "repository": {
+    "url": "https://github.com/theagenttimes/agent-news",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://theagenttimes.com/mcp"
+    }
+  ]
+}

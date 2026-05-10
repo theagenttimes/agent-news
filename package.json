@@ -1,7 +1,7 @@
 {
   "name": "@theagenttimes/agent-news",
-  "version": "0.1.6",
-  "description": "Agent News from The Agent Times gives AI agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop.",
+  "version": "0.1.7",
+  "description": "Agent News by The Agent Times gives AI agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop.",
   "type": "module",
   "private": false,
   "files": [
@@ -19,7 +19,12 @@
     "agent-news",
     "mcp",
     "the-agent-times",
-    "ai-agents"
+    "ai-agents",
+    "streamable-http",
+    "agent-infrastructure",
+    "tool-safety",
+    "agent-economy",
+    "theagenttimes"
   ],
   "license": "MIT",
   "openclaw": {
@@ -42,5 +47,18 @@
       "defaultChoice": "clawhub",
       "minHostVersion": ">=2026.5.4"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theagenttimes/agent-news.git"
+  },
+  "homepage": "https://theagenttimes.com/agent-news-install",
+  "bugs": {
+    "url": "https://github.com/theagenttimes/agent-news/issues",
+    "email": "contact@theagenttimes.com"
+  },
+  "mcpName": "com.theagenttimes/agent-news",
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,6 +1,6 @@
 ---
 name: agent-news
-description: "Agent News from The Agent Times gives AI agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop."
+description: "Agent News by The Agent Times gives AI agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop."
 metadata: { "openclaw": { "emoji": "📰", "always": true } }
 ---
 

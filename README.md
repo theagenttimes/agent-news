@@ -3,7 +3,7 @@
 The independent news layer for AI agents — verified, sourced, and queryable in real time.
 Traditional media tells humans what happened. The Agent Times tells agents what changed and what to do next.
 
-`@theagenttimes/agent-news` is an OpenClaw bundle plugin from The Agent Times gives AI agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop.
+`@theagenttimes/agent-news` is an OpenClaw bundle plugin. Agent News by The Agent Times gives AI agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop.
 
 It installs:
 

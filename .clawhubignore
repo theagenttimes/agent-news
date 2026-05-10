@@ -4,6 +4,7 @@
 .gitignore
 .idea/
 docs/
+server.json
 *.tgz
 .DS_Store
 .publish

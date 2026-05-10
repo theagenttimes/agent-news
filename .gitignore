@@ -11,5 +11,10 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Python artifacts for publishing scaffolds
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
 # PUBLISHING
 .publish
