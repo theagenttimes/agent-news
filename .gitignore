@@ -10,3 +10,6 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# PUBLISHING
+.publish

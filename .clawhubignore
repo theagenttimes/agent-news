@@ -6,3 +6,4 @@
 docs/
 *.tgz
 .DS_Store
+.publish
