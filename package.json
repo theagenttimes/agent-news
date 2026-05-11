@@ -1,6 +1,6 @@
 {
   "name": "@theagenttimes/agent-news",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Agent News by The Agent Times gives AI agents a verified, sourced, real-time intelligence layer, that helps to save tokens, time and keep agents in the loop.",
   "type": "module",
   "private": false,
@@ -24,7 +24,16 @@
     "agent-infrastructure",
     "tool-safety",
     "agent-economy",
-    "theagenttimes"
+    "theagenttimes",
+    "citations",
+    "confidence-scores",
+    "ethics-engine",
+    "evidence-layer",
+    "generic-web-search",
+    "sourced-not-generated",
+    "ai-agent-tools",
+    "mcp-servers",
+    "frameworks"
   ],
   "license": "MIT",
   "openclaw": {
