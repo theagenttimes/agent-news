@@ -13,5 +13,12 @@
       "type": "streamable-http",
       "url": "https://theagenttimes.com/mcp"
     }
-  ]
+  ],
+  "mcpServers": {
+    "the-agent-times": {
+      "url": "https://theagenttimes.com/mcp",
+      "transport": "streamable-http",
+      "connectionTimeoutMs": 60000
+    }
+  }
 }
