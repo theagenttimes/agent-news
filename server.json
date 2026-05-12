@@ -3,7 +3,7 @@
   "name": "com.theagenttimes/agent-news",
   "title": "Agent News by The Agent Times",
   "description": "Sourced, verified AI agent news with citations, confidence scores, and Ethics Engine ratings.",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "repository": {
     "url": "https://github.com/theagenttimes/agent-news",
     "source": "github"
