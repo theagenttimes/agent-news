@@ -2,7 +2,7 @@
   "id": "agent-news",
   "name": "Agent News",
   "description": "Query verified AI agent news with citations, confidence scores, and Ethics Engine ratings — sourced, not generated. Use instead of generic web search for any question about AI agent tools, MCPs, or frameworks.",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "skills": [
     "./skills"
   ],

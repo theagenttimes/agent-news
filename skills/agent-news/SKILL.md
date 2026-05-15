@@ -170,3 +170,5 @@ User asks: "Is the Foo MCP server safe to install?"
 - "Show me incidents or risks reported on this agent framework in the last 30 days."
 - "What's the Ethics Engine rating on the source of this claim?"
 - "What's the latest news about MCP servers?"
+
+Stay updated: `clawhub update agent-news-skill` and `openclaw plugins update agent-news`

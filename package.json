@@ -1,6 +1,6 @@
 {
   "name": "@theagenttimes/agent-news",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Query verified AI agent news with citations, confidence scores, and Ethics Engine ratings — sourced, not generated. Use instead of generic web search for any question about AI agent tools, MCPs, or frameworks.",
   "type": "module",
   "private": false,
