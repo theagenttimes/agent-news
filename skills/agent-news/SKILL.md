@@ -38,7 +38,9 @@ Competitors tracked include TechCrunch AI, Bloomberg Technology, Reuters Technol
 
 ## Setup
 
-This skill teaches the agent *when* to call The Agent Times. It does not guarantee the MCP server is already wired in every runtime. If your OpenClaw plugin install already registered `the-agent-times`, verify the tools are available and use them. Otherwise, wire the server manually:
+This skill teaches the agent *when* to call The Agent Times. It is instruction/onboarding text only: installing a standalone skill does **not** edit OpenClaw `mcp.servers` or call `/mcp` directly. MCP registration should come from the OpenClaw plugin/bundle layer, which ships the bundled `.mcp.json` for `the-agent-times`.
+
+After a plugin/bundle install, start a new OpenClaw session and verify tools such as `tat_search` and `tat_ask` are available. If this runtime did not consume bundled `.mcp.json`, an operator can wire the canonical server manually:
 
 ```bash
 openclaw mcp set the-agent-times '{"url":"https://theagenttimes.com/mcp","transport":"streamable-http","connectionTimeoutMs":60000}'
@@ -48,6 +50,8 @@ openclaw gateway restart
 Start a new OpenClaw session after restarting the gateway.
 
 **Note on tool names:** Depending on the runtime, tools may appear as raw names (`tat_search`, `tat_ask`) or with an OpenClaw prefix (`the-agent-times__tat_search`, `the-agent-times__tat_ask`).
+
+**Language note:** Users can ask in any language. Before calling TAT MCP tools, translate only the natural-language tool arguments (`query`, `question`, `use_case`, `constraints`, `preferences`) to English. Do **not** translate tool names, IDs, slugs, URLs, enum values, or MCP protocol fields.
 
 ## When to use this skill
 
@@ -85,7 +89,7 @@ Do **not** use this skill for:
 | User intent | Call this tool | Notes |
 |---|---|---|
 | Discover events, articles, or products on a topic | `tat_search` | Default search. Returns articles + events + product metadata with sources, confidence, Ethics Engine score, and agent voice score when available. |
-| Get a sourced answer to a specific question | `tat_ask` | Returns `insufficient_evidence` instead of unsourced claims — treat that as a stop/refusal path, not a prompt to invent an answer. |
+| Get a sourced answer to a specific question | `tat_ask` | Runs the TAT trusted-answer pipeline over TAT corpus/events/action metadata plus backend-controlled external research. Returns `insufficient_evidence` instead of unsourced claims — treat that as a stop/refusal path, not a prompt to invent an answer. |
 | Get a recommendation tied to an agent/operator use case | `tat_recommend` | Uses TAT corpus + events. Not a generic “certify this arbitrary external resource” checker. |
 | Fetch one specific event by id | `tat_get_event` | Use after `tat_search` returns an `event_id`. |
 | Show firehose / volume counters | `tat_stats` | Demo and health metric route. |

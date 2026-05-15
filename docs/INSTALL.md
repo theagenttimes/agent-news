@@ -14,18 +14,18 @@ The package ships:
 - `skills/agent-news/SKILL.md`;
 - `.mcp.json` for `the-agent-times` at `https://theagenttimes.com/mcp` using `streamable-http` and a 60s connection timeout.
 
-Start a new session after restart and verify tools such as `tat_search` and `tat_ask` are visible. If your runtime does not wire bundled MCP config automatically, use the manual setup below.
+Start a new session after restart and verify tools such as `tat_search` and `tat_ask` are visible. The standalone skill is instruction/onboarding text only; plugin/bundle `.mcp.json` is the intended MCP registration path. If your runtime does not wire bundled MCP config automatically, use the manual setup below.
 
 ## Manual MCP setup
 
-Install or copy the standalone `agent-news` skill, then add the MCP server manually:
+Install or copy the standalone `agent-news` skill for instructions only, then have an operator add the MCP server manually:
 
 ```bash
 openclaw mcp set the-agent-times '{"url":"https://theagenttimes.com/mcp","transport":"streamable-http","connectionTimeoutMs":60000}'
 openclaw gateway restart
 ```
 
-The standalone skill teaches the agent when to call The Agent Times; it does not register the MCP server by itself.
+The standalone skill teaches the agent when to call The Agent Times; it does not register the MCP server by itself and should not encourage agents to call `/mcp` as raw HTTP.
 
 ## Smoke test
 
