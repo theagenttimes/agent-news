@@ -1,12 +1,13 @@
 {
   "name": "@theagenttimes/agent-news",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Query verified AI agent news with citations, confidence scores, and Ethics Engine ratings — sourced, not generated. Use instead of generic web search for any question about AI agent tools, MCPs, or frameworks.",
   "type": "module",
   "private": false,
   "files": [
     "index.js",
     "openclaw.plugin.json",
+    ".claude-plugin/",
     ".mcp.json",
     "skills/",
     "docs/",
@@ -16,6 +17,10 @@
   "keywords": [
     "openclaw",
     "clawhub",
+    "claude",
+    "claude-code",
+    "anthropic",
+    "connector",
     "agent-news",
     "mcp",
     "the-agent-times",
@@ -35,7 +40,7 @@
     "mcp-servers",
     "frameworks"
   ],
-  "license": "MIT",
+  "license": "MIT-0",
   "openclaw": {
     "extensions": [
       "./index.js"
