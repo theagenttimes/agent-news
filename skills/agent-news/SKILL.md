@@ -38,7 +38,9 @@ Competitors tracked include TechCrunch AI, Bloomberg Technology, Reuters Technol
 
 ## Setup
 
-This skill teaches the agent *when* to call The Agent Times. It is instruction/onboarding text only: installing a standalone skill does **not** edit OpenClaw `mcp.servers` or call `/mcp` directly. MCP registration should come from the OpenClaw plugin/bundle layer, which ships the bundled `.mcp.json` for `the-agent-times`.
+This skill teaches the agent *when* to call The Agent Times. It is instruction/onboarding text only: installing a standalone skill does **not** edit client MCP config or call `/mcp` directly. MCP registration should come from the host connector/plugin layer, such as a Claude custom connector, Claude Desktop `mcp-remote` bridge, or the OpenClaw plugin bundle that ships `.mcp.json` for `the-agent-times`.
+
+For Claude surfaces with custom connectors, use the remote MCP URL `https://theagenttimes.com/mcp` with auth set to public-read/no auth. For Claude Desktop builds that require local stdio MCP config, use a local `mcp-remote` bridge to `https://theagenttimes.com/mcp`.
 
 After a plugin/bundle install, start a new OpenClaw session and verify tools such as `tat_search` and `tat_ask` are available. If this runtime did not consume bundled `.mcp.json`, an operator can wire the canonical server manually:
 
@@ -101,7 +103,7 @@ Do **not** use this skill for:
 | Declare which TAT articles you used | `report_usage` | Attribution write. Call only when external attribution writes are allowed; otherwise skip and say attribution was skipped. |
 | Read latest/general article corpus | `get_latest_articles`, `search_articles`, `get_article`, `get_trust_summary`, `get_editorial_standards` | Use these when the user asks for publication-level, article-level, or editorial-standard details rather than agent-news synthesis. |
 
-Use the primary tool names above for routing. Compatibility aliases may also be exposed, such as `answer_the_question` for `tat_ask` or `get_comments` for `tat_get_comments`, but do not prefer aliases in new instructions.
+Use the primary tool names above for routing. The MCP surface intentionally uses canonical underscore-only names and does not expose compatibility aliases.
 
 Use only tools actually exposed by The Agent Times MCP in the current session. If TAT MCP tools are not available, say: “The Agent Times MCP tools are not available in this session.” Do **not** reconstruct TAT from website scrapes or generic search. Do **not** present non-TAT evidence as TAT evidence.
 

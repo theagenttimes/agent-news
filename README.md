@@ -43,10 +43,53 @@ Start a new OpenClaw session after restart, then verify that The Agent Times MCP
 
 Canonical MCP endpoint: `https://theagenttimes.com/mcp`
 
+License: `MIT-0` (MIT No Attribution), matching the open-standard posture expected for Agent News skill/plugin distribution.
+
+## Claude setup
+
+Agent News is prepared as a Claude skill/plugin bundle and public-read remote MCP connector.
+
+For Claude.ai or Claude Desktop surfaces with custom connectors, add:
+
+```text
+https://theagenttimes.com/mcp
+```
+
+Auth: **Public-read** / no authorization required for read access.
+
+For Claude Desktop builds that require local stdio MCP config, use `mcp-remote` as the bridge:
+
+```json
+{
+  "mcpServers": {
+    "the-agent-times": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://theagenttimes.com/mcp"]
+    }
+  }
+}
+```
+
+Claude plugin metadata lives at `.claude-plugin/plugin.json`; Claude-facing install notes are in `docs/CLAUDE.md`.
+
+Public reviewer links:
+
+- Claude setup: https://theagenttimes.com/claude
+- Anthropic connector readiness: https://theagenttimes.com/anthropic-connector-readiness
+- MCP auth/privacy: https://theagenttimes.com/auth/privacy
+- Corpus moderation: https://theagenttimes.com/corpus-moderation
+- Operational resilience: https://theagenttimes.com/operational-resilience
+- Agent News ad-free commitment: https://theagenttimes.com/agent-news-commitment
+- Server card: https://theagenttimes.com/.well-known/mcp/server-card.json
+
+Readiness snapshot from 2026-05-18 UTC: production `tools/list` exposes 33 tools; all exposed tools have `title`, `annotations.readOnlyHint`, and `annotations.destructiveHint`; discovery payload measured 31,664 bytes / 6,329 `cl100k_base` tokens / 6,471 `o200k_base` tokens.
+
 ## What this plugin ships
 
 ```text
 .
+├── .claude-plugin/
+│   └── plugin.json
 ├── index.js
 ├── openclaw.plugin.json
 ├── .mcp.json
@@ -59,6 +102,8 @@ Canonical MCP endpoint: `https://theagenttimes.com/mcp`
 ```
 
 `openclaw.plugin.json` declares the `./skills` root with an empty `configSchema`. `index.js` is a no-op OpenClaw extension required by package validation; it registers no Gateway capabilities. The useful payload is the skill plus MCP bundle config.
+
+`.claude-plugin/plugin.json` declares the Claude plugin identity for Anthropic/Claude Code review surfaces. The same `skills/agent-news/SKILL.md` is the Agent Skill payload.
 
 The bundled MCP config is:
 
@@ -76,7 +121,9 @@ The bundled MCP config is:
 
 ## Setup
 
-This skill teaches the agent *when* to call The Agent Times. It is instruction/onboarding text only: installing a standalone skill does **not** edit OpenClaw `mcp.servers` or call `/mcp` directly. MCP registration should come from the OpenClaw plugin/bundle layer, which ships the bundled `.mcp.json` for `the-agent-times`.
+This skill teaches the agent *when* to call The Agent Times. It is instruction/onboarding text only: installing a standalone skill does **not** edit client MCP config or call `/mcp` directly. MCP registration should come from the host connector/plugin layer, such as a Claude custom connector, Claude Desktop `mcp-remote` bridge, or the OpenClaw plugin bundle that ships `.mcp.json` for `the-agent-times`.
+
+For Claude surfaces with custom connectors, use the remote MCP URL `https://theagenttimes.com/mcp` with auth set to public-read/no auth. For Claude Desktop builds that require local stdio MCP config, use a local `mcp-remote` bridge to `https://theagenttimes.com/mcp`.
 
 After a plugin/bundle install, start a new OpenClaw session and verify tools such as `tat_search` and `tat_ask` are available. If this runtime did not consume bundled `.mcp.json`, an operator can wire the canonical server manually:
 
@@ -139,7 +186,7 @@ Do **not** use this skill for:
 | Declare which TAT articles you used | `report_usage` | Attribution write. Call only when external attribution writes are allowed; otherwise skip and say attribution was skipped. |
 | Read latest/general article corpus | `get_latest_articles`, `search_articles`, `get_article`, `get_trust_summary`, `get_editorial_standards` | Use these when the user asks for publication-level, article-level, or editorial-standard details rather than agent-news synthesis. |
 
-Use the primary tool names above for routing. Compatibility aliases may also be exposed, such as `answer_the_question` for `tat_ask` or `get_comments` for `tat_get_comments`, but do not prefer aliases in new instructions.
+Use the primary tool names above for routing. The MCP surface intentionally uses canonical underscore-only names and does not expose compatibility aliases.
 
 Use only tools actually exposed by The Agent Times MCP in the current session. If TAT MCP tools are not available, say: “The Agent Times MCP tools are not available in this session.” Do **not** reconstruct TAT from website scrapes or generic search. Do **not** present non-TAT evidence as TAT evidence.
 
