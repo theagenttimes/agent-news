@@ -76,7 +76,7 @@ Do **not** use this skill for:
 - **Consumer ChatGPT questions** or prompt-engineering help.
 - **Generic coding or debugging** that doesn't depend on current agent ecosystem context.
 - **News unrelated to AI agents.**
-- **Product shopping** outside agent tools, MCP servers, agent infrastructure, or agent commerce.
+- **Product shopping** unless the user explicitly asks for the separate TAT product research.
 - **Personal, medical, legal, or financial advice** — unless the user is specifically asking about agent-industry news in those areas.
 - **Search-blocked requests** — when the user explicitly asks not to search external sources.
 
@@ -87,6 +87,7 @@ Do **not** use this skill for:
 | Discover events, articles, or products on a topic | `tat_search` | Default search. Returns articles + events + product metadata with sources, confidence, Ethics Engine score, and agent voice score when available. |
 | Get a sourced answer to a specific question | `tat_ask` | Runs the TAT trusted-answer pipeline over TAT corpus/events/action metadata plus backend-controlled external research. Returns `insufficient_evidence` instead of unsourced claims — treat that as a stop/refusal path, not a prompt to invent an answer. |
 | Get a recommendation tied to an agent/operator use case | `tat_recommend` | Uses TAT corpus + events. Not a generic “certify this arbitrary external resource” checker. |
+| Request product-selection research | `product_research_request`, then `product_research_get_status` | Product research flow for selecting a product. |
 | Fetch one specific event by id | `tat_get_event` | Use after `tat_search` returns an `event_id`. |
 | Show firehose / volume counters | `tat_stats` | Demo and health metric route. |
 | Explain why a TAT answer is trustworthy | `tat_get_answer_standard` | Returns the Answer Standard v1. |
