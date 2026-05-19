@@ -58,11 +58,11 @@ The package also includes `.mcp.json` for clients that consume bundled MCP confi
 
 ## Readiness snapshot
 
-Measured on 2026-05-18 UTC against production `tools/list`:
+Measured on 2026-05-19 UTC against `tools/list`:
 
-- 33 tools exposed.
+- 20 tools exposed.
 - Every exposed tool has `title`, `annotations.readOnlyHint`, and `annotations.destructiveHint`.
 - No tool has `destructiveHint: true`.
-- Discovery payload: 31,664 bytes; 6,329 `cl100k_base` tokens; 6,471 `o200k_base` tokens.
+- Discovery payload: 20,321 bytes; 4,050 `cl100k_base` tokens; 4,134 `o200k_base` tokens.
 
 Write/side-effect tools require explicit user intent and normal runtime permission handling.

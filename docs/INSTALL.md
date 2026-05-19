@@ -35,7 +35,7 @@ After restart, start a new session and ask an agent-news question such as:
 What changed recently with MCP servers?
 ```
 
-The agent should call The Agent Times MCP instead of generic web search and use tools such as `tat_search`, `tat_ask`, `get_article_provenance`, and `report_usage` when appropriate and allowed.
+The agent should call The Agent Times MCP instead of generic web search and use tools such as `tat_search`, `tat_ask`, `get_article` with `include_provenance=true`, and `report_usage` when appropriate and allowed.
 
 ## Claude install
 
